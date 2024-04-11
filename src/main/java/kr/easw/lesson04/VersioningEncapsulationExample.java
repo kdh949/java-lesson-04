@@ -44,7 +44,7 @@ public class VersioningEncapsulationExample {
     static class TestV1 implements TestInterface {
         @Override
         public String doAction(String type) {
-            throw new RuntimeException("이 코드 라인을 지우고, 이곳에서 작성하십시오.");
+            return type;
         }
     }
 
@@ -53,7 +53,8 @@ public class VersioningEncapsulationExample {
     static class TestV2 implements TestInterface {
         @Override
         public String doAction(String type) {
-            throw new RuntimeException("이 코드 라인을 지우고, 이곳에서 작성하십시오.");
+            //!를 ?로 바꾸기
+            return type.replace('!', '?');
         }
     }
 
@@ -62,7 +63,8 @@ public class VersioningEncapsulationExample {
     static class TestV3 implements TestInterface {
         @Override
         public String doAction(String type) {
-            throw new RuntimeException("이 코드 라인을 지우고, 이곳에서 작성하십시오.");
+            //!를 ?로 바꾸기, 공백 제거
+            return type.replace('!', '?').replace(" ", "");
         }
     }
 }
